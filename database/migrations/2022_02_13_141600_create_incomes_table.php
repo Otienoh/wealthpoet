@@ -25,11 +25,11 @@ return new class extends Migration
             $table->bigInteger('amount'); //amount
             $table->date('date'); //date occurring
             $table->text('notes')->nullable(); //extra notes on transactions
-            $table->string('recurrs')->nullable(); // checks if it recurrs daily, weekly or null
-            $table->timestamp('next_recurrance_date')->nullable(); //date it will recurr
+            $table->string('recurs')->nullable(); // checks if it recurs daily, weekly or null
+            $table->timestamp('next_recurrence_date')->nullable(); //date it will recurr
             $table->text('location')->nullable(); // loction data
             $table->json('extra_data')->nullable(); // capture extra data
-            $table->boolean('is_income'); // identify transaction as income
+            $table->boolean('is_income')->default(true); // identify transaction as income
             $table->timestamps();
         });
     }
@@ -42,8 +42,5 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('incomes');
-        Schema::dropIfExists('incomes');
-        Schema::dropIfExists('expenses');
-        Schema::dropIfExists('transactions');
     }
 };

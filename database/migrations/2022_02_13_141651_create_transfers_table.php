@@ -18,16 +18,16 @@ return new class extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete(); //owner
-            $table->foreignIdFor(Account::class)->constrained()->cascadeOnDelete(); //account_origin
+                    $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete(); //owner
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete(); // grouping
-            $table->foreignIdFor(Account::class)->constrained()->cascadeOnDelete(); //account_destination
+            $table->foreignIdFor(Account::class)->constrained()->cascadeOnDelete(); //account_origin
+            $table->foreignIdFor(Account::class, 'destination_account_id'); //account_destination
             $table->text('description');
             $table->bigInteger('amount');
             $table->date('date');
             $table->text('notes')->nullable();
-            $table->string('recurrs')->nullable();
-            $table->timestamp('next_recurrance_date')->nullable();
+            $table->string('recurs')->nullable();
+            $table->timestamp('next_recurrence_date')->nullable();
             $table->text('location')->nullable();
             $table->json('extra_data')->nullable();
             $table->timestamps();

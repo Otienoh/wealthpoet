@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\BudgetItem;
-use App\Models\Category;
 use App\Models\CategoryGroup;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -23,13 +21,6 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->timestamps();
         });
-
-        Schema::create('budget_item_category', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(BudgetItem::class)->constrained()->cascadeOnDelete();
-            $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
-            $table->timestamps();
-        });
     }
 
     /**
@@ -39,7 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('budget_item_category');
         Schema::dropIfExists('categories');
     }
 };

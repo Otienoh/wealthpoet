@@ -79,7 +79,7 @@ class Account extends Model
     /**
      * @return HasMany
      */
-    public function tranfers(): HasMany
+    public function transfers(): HasMany
     {
         return $this->hasMany(Transfer::class);
     }
