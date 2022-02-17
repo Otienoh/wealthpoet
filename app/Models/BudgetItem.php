@@ -14,9 +14,10 @@ class BudgetItem extends Model
 
     protected $fillable = [
         'budget_id',
-        'goal',
-        'amount_spent',
-        'remaining',
+        'name',
+        'goal_amount',
+        'spent_amount',
+        'remaining_amount',
         'status',
     ];
 

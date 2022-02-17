@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Goal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,9 @@ class GoalDepositFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'goal_id' => Goal::factory(),
+            'date' => $this->faker->dateTimeThisMonth(),
+            'amount' => $this->faker->randomNumber(),
         ];
     }
 }

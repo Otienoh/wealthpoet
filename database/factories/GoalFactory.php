@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class GoalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'name' => $this->faker->word() . ' Goal',
+            'target_value' => $this->faker->randomNumber(),
+            'target_date' => $this->faker->dateTimeThisYear(),
         ];
     }
 }

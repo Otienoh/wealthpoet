@@ -20,9 +20,9 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Budget::class)->constrained()->cascadeOnDelete();
             $table->string('name');
-            $table->bigInteger('goal')->default(0);
-            $table->bigInteger('amount_spent')->default(0);
-            $table->bigInteger('remaining')->default(0);
+            $table->bigInteger('goal_amount')->default(0);
+            $table->bigInteger('spent_amount')->default(0);
+            $table->bigInteger('remaining_amount')->default(0);
             $table->string('status')->nullable();
             $table->timestamps();
         });

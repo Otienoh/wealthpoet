@@ -18,7 +18,7 @@ class Account extends Model
     protected $fillable = [
         'user_id',
         'institution_id',
-        'account_id',
+        'account_type_id',
         'name',
         'color',
         'description',

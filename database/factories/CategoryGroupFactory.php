@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\CategoryGroup;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,9 @@ class CategoryGroupFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'user_id' => User::factory(),
+            'name' => $this->faker->word() . ' Category Group',
+            'type' => $this->faker->randomElement([CategoryGroup::INCOME,CategoryGroup::EXPENSE])
         ];
     }
 }
