@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Models\Traits\OwnedByUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class CategoryGroup extends Model
@@ -17,7 +16,7 @@ class CategoryGroup extends Model
 
     public const EXPENSE = 2;
 
-    protected $fillable = ['user_id', 'name', 'color', 'type'];
+    protected $fillable = ['user_id', 'name', 'color', 'type', 'is_hidden'];
 
     /**
      * @return HasMany

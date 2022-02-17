@@ -17,7 +17,8 @@ class AccountTypeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->word() . ' Account Type',
+            'is_a_liability' => $this->faker->boolean(60),
         ];
     }
 }

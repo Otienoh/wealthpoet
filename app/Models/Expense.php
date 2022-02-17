@@ -35,6 +35,18 @@ class Expense extends Model
     ];
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function ($model) {
+            Transaction::logExpense($model);
+        });
+    }
+
+    /**
      * @return BelongsTo
      */
     public function account(): BelongsTo

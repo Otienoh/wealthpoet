@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('color')->nullable();
             $table->string('type');
+            $table->boolean('is_hidden')->default(false);
             $table->timestamps();
         });
     }

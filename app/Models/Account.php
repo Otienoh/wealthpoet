@@ -18,13 +18,12 @@ class Account extends Model
     protected $fillable = [
         'user_id',
         'institution_id',
-        'account_id',
+        'account_type_id',
         'name',
         'color',
         'description',
         'initial_balance',
         'balance',
-        'current_balance',
         'main',
         'include_in_net_worth',
         'include_in_dashboard_sum',
@@ -35,6 +34,26 @@ class Account extends Model
         'include_in_net_worth' => 'boolean',
         'include_in_dashboard_sum' => 'boolean',
     ];
+
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::creating(function ($model) {
+            $model->balance = $model->initial_balance;
+        });
+    }
+
+    public static function settleAccount(Transaction $transaction)
+    {
+        $transaction->account()->increment('balance', (int) $transaction->credit);
+        $transaction->account()->decrement('balance', (int) $transaction->debit);
+
+        return;
+    }
 
     /**
      * @return BelongsTo

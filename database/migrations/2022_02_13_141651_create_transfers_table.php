@@ -18,7 +18,7 @@ return new class extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-                    $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete(); //owner
+            $table->foreignIdFor(User::class)->constrained()->cascadeOnDelete(); //owner
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete(); // grouping
             $table->foreignIdFor(Account::class)->constrained()->cascadeOnDelete(); //account_origin
             $table->foreignIdFor(Account::class, 'destination_account_id'); //account_destination
