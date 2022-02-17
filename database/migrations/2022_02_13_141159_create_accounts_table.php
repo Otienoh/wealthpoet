@@ -25,8 +25,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('color')->nullable();
             $table->bigInteger('initial_balance')->default(0);
-            $table->bigInteger('balance')->default(0);
-            $table->bigInteger('current_balance')->default(0);
+            $table->bigInteger('balance');
             $table->boolean('main')->default(false);
             $table->boolean('include_in_net_worth')->default(true);
             $table->boolean('include_in_dashboard_sum')->default(true);
