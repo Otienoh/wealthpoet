@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('goal_deposits', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Goal::class)->constrained()->cascadeOnDelete();
-            $table->timestamp('date');
+            $table->timestamp('deposited_at');
             $table->bigInteger('amount');
             $table->timestamps();
         });
