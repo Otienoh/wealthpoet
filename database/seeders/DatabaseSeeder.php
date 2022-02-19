@@ -19,12 +19,11 @@ class DatabaseSeeder extends Seeder
          ]);
          $this->call(CategoryGroupSeeder::class);
          $this->call(AccountTypeSeeder::class);
-         \App\Models\User::factory(4)->create();
-         \App\Models\Account::factory(2)->create();
-         \App\Models\BudgetItem::factory(3)->create();
-         \App\Models\GoalDeposit::factory(5)->create();
-         \App\Models\Income::factory(5)->create();
-         \App\Models\Expense::factory(5)->create();
-         \App\Models\Transfer::factory(5)->create();
+         \App\Models\User::factory(2)->create();
+         \App\Models\BudgetItem::factory(2)->create();
+         \App\Models\GoalDeposit::factory(2)->create();
+         \App\Models\Income::factory(2)->create();
+         \App\Models\Expense::factory(2)->create();
+         \App\Models\Transfer::factory(2)->create();
     }
 }

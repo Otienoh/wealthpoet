@@ -10,10 +10,10 @@ class GoalDeposit extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['goal_id', 'date', 'amount'];
+    protected $fillable = ['goal_id', 'deposited_at', 'amount'];
 
     protected $casts = [
-        'date' => 'datetime',
+        'deposited_at' => 'datetime',
     ];
 
     /**
