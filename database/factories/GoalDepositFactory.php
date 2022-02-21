@@ -19,7 +19,7 @@ class GoalDepositFactory extends Factory
     {
         return [
             'goal_id' => Goal::factory(),
-            'date' => $this->faker->dateTimeThisMonth(),
+            'deposited_at' => $this->faker->dateTimeThisMonth(),
             'amount' => $this->faker->biasedNumberBetween(100, 500),
         ];
     }

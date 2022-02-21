@@ -16,6 +16,8 @@ class CategoryGroup extends Model
 
     public const EXPENSE = 2;
 
+    public const TRANSFER = 3;
+
     protected $fillable = ['user_id', 'name', 'color', 'type', 'is_hidden'];
 
     /**
