@@ -22,8 +22,6 @@ return new class extends Migration
             $table->string('name');
             $table->bigInteger('goal_amount')->default(0);
             $table->bigInteger('spent_amount')->default(0);
-            $table->bigInteger('remaining_amount')->default(0);
-            $table->string('status')->nullable();
             $table->timestamps();
         });
 

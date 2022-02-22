@@ -21,8 +21,29 @@ class CategoryGroupFactory extends Factory
         return [
             'user_id' => User::factory(),
             'name' => $this->faker->word() . ' Category Group',
-            'type' => $this->faker->randomElement([CategoryGroup::INCOME, CategoryGroup::EXPENSE]),
+            'type' => $this->faker->randomElement([CategoryGroup::TYPE_INCOME, CategoryGroup::TYPE_EXPENSE]),
             'is_hidden' => $this->faker->boolean(),
         ];
+    }
+
+    public function income()
+    {
+        return $this->state([
+            'type' => CategoryGroup::TYPE_INCOME,
+        ]);
+    }
+
+    public function expense()
+    {
+        return $this->state([
+            'type' => CategoryGroup::TYPE_EXPENSE,
+        ]);
+    }
+
+    public function transfer()
+    {
+        return $this->state([
+            'type' => CategoryGroup::TYPE_TRANSFER,
+        ]);
     }
 }
