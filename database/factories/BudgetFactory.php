@@ -26,4 +26,18 @@ class BudgetFactory extends Factory
             'income_spending_goal' => $this->faker->biasedNumberBetween(100, 500),
         ];
     }
+
+    public function monthly()
+    {
+        return $this->state([
+            'type' => Budget::TYPE_MONTHLY,
+        ]);
+    }
+
+    public function custom()
+    {
+        return $this->state([
+            'type' => Budget::TYPE_CUSTOM,
+        ]);
+    }
 }
