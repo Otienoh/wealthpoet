@@ -21,8 +21,8 @@ class CategoryGroupSeeder extends Seeder
 
         collect(json_decode($json, true))->each(function ($categoriesGroup) {
             $type = match ($categoriesGroup['type']) {
-                'Income' => CategoryGroup::INCOME,
-                'Expense' => CategoryGroup::EXPENSE,
+                'Income' => CategoryGroup::TYPE_INCOME,
+                'Expense' => CategoryGroup::TYPE_EXPENSE,
                 'Transfer' => CategoryGroup::TRANSFER,
             };
 

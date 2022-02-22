@@ -29,6 +29,14 @@ it('correctly identifies the retrieved model type', function () {
     expect($monthlyBudget->isAMonthlyBudget())->toBeTruthy();
 });
 
+it('correctly the retrieves model type based on scope', function () {
+    Budget::factory()->custom()->create();
+    Budget::factory()->monthly()->create();
+
+    expect(Budget::customBudget()->count())->toEqual(1);
+    expect(Budget::monthlyBudget()->count())->toEqual(1);
+});
+
 it('can correctly calculate the totalSpending', function () {
 
     $budgetWithUnderSpendBudgetItems = Budget::factory()
