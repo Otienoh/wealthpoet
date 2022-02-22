@@ -17,6 +17,12 @@ class Budget extends Model
 
     public const TYPE_CUSTOM = 2;
 
+    public const STATUS_BALANCED = 1;
+
+    public const STATUS_UNDERSPEND = 2;
+
+    public const STATUS_OVERSPEND = 3;
+
     protected $fillable = [
         'user_id',
         'name',
@@ -66,6 +72,27 @@ class Budget extends Model
     public function scopeMonthlyBudget(Builder $builder): void
     {
         $builder->where('type', self::TYPE_MONTHLY);
+    }
+
+    /**
+     * Calculate the remaining amount
+     *
+     * @return int
+     */
+    public function totalSpending(): int
+    {
+        return $this->budgetItems()->sum('spent_amount');
+    }
+
+    public function status()
+    {
+        $balance = $this->income_spending_goal - $this->totalSpending();
+
+        return match (true) {
+            $balance > 0 => Budget::STATUS_UNDERSPEND,
+            $balance == 0 => Budget::STATUS_BALANCED,
+            $balance < 0 => Budget::STATUS_OVERSPEND,
+        };
     }
 
     /**
