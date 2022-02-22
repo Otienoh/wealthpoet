@@ -30,27 +30,14 @@ it('correctly identifies the retrieved model type', function () {
 });
 
 it('can correctly calculate the totalSpending', function () {
-    $budgetWithBalancedBudgetItems = Budget::factory()
-                                        ->has(\App\Models\BudgetItem::factory()
-                                            ->balanced()
-                                            ->count(2)
-                                        )->create(['income_spending_goal' => 0]);
 
     $budgetWithUnderSpendBudgetItems = Budget::factory()
                                         ->has(\App\Models\BudgetItem::factory()
                                             ->underspend()
                                             ->count(2)
-                                        )->create(['income_spending_goal' => 500]);
+                                        )->create();
 
-    $budgetWithOverSpendBudgetItems = Budget::factory()
-                                        ->has(\App\Models\BudgetItem::factory()
-                                            ->overspend()
-                                            ->count(2)
-                                        )->create(['income_spending_goal' => 100]);
-
-    expect($budgetWithBalancedBudgetItems->totalSpending())->toEqual(0);
     expect($budgetWithUnderSpendBudgetItems->totalSpending())->toEqual(100);
-    expect($budgetWithOverSpendBudgetItems->totalSpending())->toEqual(200);
 });
 
 it('can correctly determine the balance status', function () {
