@@ -12,14 +12,39 @@ class BudgetItem extends Model
 {
     use HasFactory;
 
+    public const STATUS_BALANCED = 1;
+
+    public const STATUS_UNDERSPEND = 2;
+
+    public const STATUS_OVERSPEND = 3;
+
     protected $fillable = [
         'budget_id',
         'name',
         'goal_amount',
         'spent_amount',
-        'remaining_amount',
-        'status',
     ];
+
+    /**
+     * Calculate the remaining amount
+     *
+     * @return int
+     */
+    public function balance(): int
+    {
+        return $this->goal_amount - $this->spent_amount;
+    }
+
+    public function status()
+    {
+        $balance = $this->balance();
+
+        return match (true) {
+            $balance > 0 => BudgetItem::STATUS_UNDERSPEND,
+            $balance == 0 => BudgetItem::STATUS_BALANCED,
+            $balance < 0 => BudgetItem::STATUS_OVERSPEND,
+        };
+    }
 
     /**
      * @return BelongsTo

@@ -22,7 +22,6 @@ class BudgetItemFactory extends Factory
             'name' => $this->faker->word() . ' Budget Item',
             'goal_amount' => $this->faker->randomNumber(),
             'spent_amount' => $this->faker->randomNumber(),
-            'remaining_amount' => $this->faker->randomNumber(),
         ];
     }
 }

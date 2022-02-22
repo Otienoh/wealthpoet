@@ -2,10 +2,9 @@
 
 use App\Models\Budget;
 use function Pest\Laravel\assertDatabaseCount;
-use function Pest\Laravel\assertDatabaseHas;
 
 it('can create a budget', function () {
-    $budget = Budget::factory()->create();
+    Budget::factory()->create();
 
     assertDatabaseCount('budgets', 1);
 });
