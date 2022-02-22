@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e85f9f959c0b087110331754d451cf",
+    "content-hash": "f4ef416be70b3a225317f931913014cd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5735,6 +5735,261 @@
             "time": "2022-01-18T17:49:08+00:00"
         },
         {
+            "name": "pestphp/pest",
+            "version": "v1.21.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestphp/pest.git",
+                "reference": "92b8d32ef78c54c915641999e0c4167d7202b2d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestphp/pest/zipball/92b8d32ef78c54c915641999e0c4167d7202b2d9",
+                "reference": "92b8d32ef78c54c915641999e0c4167d7202b2d9",
+                "shasum": ""
+            },
+            "require": {
+                "nunomaduro/collision": "^5.4.0|^6.0",
+                "pestphp/pest-plugin": "^1.0.0",
+                "php": "^7.3 || ^8.0",
+                "phpunit/phpunit": "^9.5.5"
+            },
+            "require-dev": {
+                "illuminate/console": "^8.47.0",
+                "illuminate/support": "^8.47.0",
+                "laravel/dusk": "^6.15.0",
+                "pestphp/pest-dev-tools": "dev-master",
+                "pestphp/pest-plugin-parallel": "^1.0"
+            },
+            "bin": [
+                "bin/pest"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "pest": {
+                    "plugins": [
+                        "Pest\\Plugins\\Coverage",
+                        "Pest\\Plugins\\Init",
+                        "Pest\\Plugins\\Version",
+                        "Pest\\Plugins\\Environment"
+                    ]
+                },
+                "laravel": {
+                    "providers": [
+                        "Pest\\Laravel\\PestServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Functions.php",
+                    "src/Pest.php"
+                ],
+                "psr-4": {
+                    "Pest\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nuno Maduro",
+                    "email": "enunomaduro@gmail.com"
+                }
+            ],
+            "description": "An elegant PHP Testing Framework.",
+            "keywords": [
+                "framework",
+                "pest",
+                "php",
+                "test",
+                "testing",
+                "unit"
+            ],
+            "support": {
+                "issues": "https://github.com/pestphp/pest/issues",
+                "source": "https://github.com/pestphp/pest/tree/v1.21.1"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/enunomaduro",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/lukeraymonddowning",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nunomaduro",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/octoper",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/olivernybroe",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/owenvoke",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/nunomaduro",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-11-25T16:44:17+00:00"
+        },
+        {
+            "name": "pestphp/pest-plugin",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestphp/pest-plugin.git",
+                "reference": "fc8519de148699fe612d9c669be60554cd2db4fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin/zipball/fc8519de148699fe612d9c669be60554cd2db4fa",
+                "reference": "fc8519de148699fe612d9c669be60554cd2db4fa",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "conflict": {
+                "pestphp/pest": "<1.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.10.19",
+                "pestphp/pest": "^1.0",
+                "pestphp/pest-dev-tools": "dev-master"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                },
+                "class": "Pest\\Plugin\\Manager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pest\\Plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The Pest plugin manager",
+            "keywords": [
+                "framework",
+                "manager",
+                "pest",
+                "php",
+                "plugin",
+                "test",
+                "testing",
+                "unit"
+            ],
+            "support": {
+                "source": "https://github.com/pestphp/pest-plugin/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/nunomaduro",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/nunomaduro",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2021-01-03T15:53:42+00:00"
+        },
+        {
+            "name": "pestphp/pest-plugin-laravel",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestphp/pest-plugin-laravel.git",
+                "reference": "64996218006570f6f58f3c7ebb6f0c7bfb3c60b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestphp/pest-plugin-laravel/zipball/64996218006570f6f58f3c7ebb6f0c7bfb3c60b9",
+                "reference": "64996218006570f6f58f3c7ebb6f0c7bfb3c60b9",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^7.0 || ^8.0 || ^9.0",
+                "pestphp/pest": "^1.7",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.12.1 || ^6.7.2",
+                "pestphp/pest-dev-tools": "dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Autoload.php"
+                ],
+                "psr-4": {
+                    "Pest\\Laravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The Pest Laravel Plugin",
+            "keywords": [
+                "framework",
+                "laravel",
+                "pest",
+                "php",
+                "test",
+                "testing",
+                "unit"
+            ],
+            "support": {
+                "source": "https://github.com/pestphp/pest-plugin-laravel/tree/v1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.com/paypalme/enunomaduro",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/nunomaduro",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/nunomaduro",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-01-13T17:09:04+00:00"
+        },
+        {
             "name": "phar-io/manifest",
             "version": "2.0.3",
             "source": {
@@ -5796,16 +6051,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.1.1",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "15a90844ad40f127afd244c0cad228de2a80052a"
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/15a90844ad40f127afd244c0cad228de2a80052a",
-                "reference": "15a90844ad40f127afd244c0cad228de2a80052a",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
+                "reference": "4f7fd7836c6f332bb2933569e566a0d6c4cbed74",
                 "shasum": ""
             },
             "require": {
@@ -5841,9 +6096,9 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/3.1.1"
+                "source": "https://github.com/phar-io/version/tree/3.2.1"
             },
-            "time": "2022-02-07T21:56:48+00:00"
+            "time": "2022-02-21T01:04:05+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -6074,16 +6329,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.10",
+            "version": "9.2.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687"
+                "reference": "665a1ac0a763c51afc30d6d130dac0813092b17f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d5850aaf931743067f4bfc1ae4cbd06468400687",
-                "reference": "d5850aaf931743067f4bfc1ae4cbd06468400687",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/665a1ac0a763c51afc30d6d130dac0813092b17f",
+                "reference": "665a1ac0a763c51afc30d6d130dac0813092b17f",
                 "shasum": ""
             },
             "require": {
@@ -6139,7 +6394,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.10"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.11"
             },
             "funding": [
                 {
@@ -6147,7 +6402,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-05T09:12:13+00:00"
+            "time": "2022-02-18T12:46:09+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6392,16 +6647,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.13",
+            "version": "9.5.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743"
+                "reference": "1883687169c017d6ae37c58883ca3994cfc34189"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/597cb647654ede35e43b137926dfdfef0fb11743",
-                "reference": "597cb647654ede35e43b137926dfdfef0fb11743",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1883687169c017d6ae37c58883ca3994cfc34189",
+                "reference": "1883687169c017d6ae37c58883ca3994cfc34189",
                 "shasum": ""
             },
             "require": {
@@ -6479,7 +6734,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.13"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.14"
             },
             "funding": [
                 {
@@ -6491,7 +6746,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-24T07:33:35+00:00"
+            "time": "2022-02-18T12:54:07+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -6999,16 +7254,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "5.0.4",
+            "version": "5.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4"
+                "reference": "0ca8db5a5fc9c8646244e629625ac486fa286bf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
-                "reference": "19c519631c5a511b7ed0ad64a6713fdb3fd25fe4",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/0ca8db5a5fc9c8646244e629625ac486fa286bf2",
+                "reference": "0ca8db5a5fc9c8646244e629625ac486fa286bf2",
                 "shasum": ""
             },
             "require": {
@@ -7051,7 +7306,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/global-state/issues",
-                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.4"
+                "source": "https://github.com/sebastianbergmann/global-state/tree/5.0.5"
             },
             "funding": [
                 {
@@ -7059,7 +7314,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-02-10T07:01:19+00:00"
+            "time": "2022-02-14T08:28:10+00:00"
         },
         {
             "name": "sebastian/lines-of-code",
@@ -7798,7 +8053,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^8.0"
+        "php": "^8.0 | ^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.1.0"
