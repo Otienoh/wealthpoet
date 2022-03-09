@@ -1,385 +1,385 @@
-[ 
-{ 
+[
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Car Accessories"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Car Maintenance & Repairs"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Car Insurance"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Car Payments"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Transport"
 },
-{ 
+{
 "name":"Auto & Transport",
 "type":"Expense",
 "category":"Car Fuel"
 },
-{ 
+{
 "name":"Awards & Gifts",
 "type":"Income",
 "category":"Awards & Gifts"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Subcriptions"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Electricity"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Water"
 },
-{ 
+{
 "name":"Bills & Utilities",
-"type":"Expense",
+"type":"Expense",   
 "category":"Others"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Airtime & Data"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"WiFi Internet"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Security"
 },
-{ 
+{
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Garbage"
 },
-{ 
+{
 "name":"Business",
 "type":"Expense",
 "category":"Business Expense"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Student Loans"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Tution"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Books & Supplies"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Kindle & Audible"
 },
-{ 
+{
 "name":"Education",
 "type":"Expense",
 "category":"Classes"
 },
-{ 
+{
 "name":"Financial",
 "type":"Expense",
 "category":"Bank Charges & Fines"
 },
-{ 
+{
 "name":"Financial",
 "type":"Expense",
 "category":"Loan Repayments"
 },
-{ 
+{
 "name":"Financial",
 "type":"Expense",
 "category":"Consultations"
 },
-{ 
+{
 "name":"Financial",
 "type":"Expense",
 "category":"Credit Card Payments"
 },
-{ 
+{
 "name":"Financial",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Food & Dining",
 "type":"Expense",
 "category":"Home"
 },
-{ 
+{
 "name":"Food & Dining",
 "type":"Expense",
 "category":"Eat Outs"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Health Insurance"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Products"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Fitness"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Dentists"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Grooming & Barbershop"
 },
-{ 
+{
 "name":"Health & Wellness",
 "type":"Expense",
 "category":"Medical"
 },
-{ 
+{
 "name":"High Risk",
 "type":"Expense",
 "category":"High Risk"
 },
-{ 
+{
 "name":"Housing",
 "type":"Expense",
 "category":"Home Repairs"
 },
-{ 
+{
 "name":"Housing",
 "type":"Expense",
 "category":"Rent"
 },
-{ 
+{
 "name":"Housing",
 "type":"Expense",
 "category":"Mortgage"
 },
-{ 
+{
 "name":"Housing",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Housing",
 "type":"Expense",
 "category":"House Management"
 },
-{ 
+{
 "name":"Insurance Policies",
 "type":"Expense",
 "category":"Insurance Policies"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Others"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Rental Income"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Commissions"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Sacco Dividends"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Sacco Rebates"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Bond Interests"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Dividends"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Interests"
 },
-{ 
+{
 "name":"Investments",
 "type":"Income",
 "category":"Capital Gains"
 },
-{ 
+{
 "name":"Other",
 "type":"Expense",
 "category":"Misc"
 },
-{ 
+{
 "name":"Refunds",
 "type":"Income",
 "category":"Refunds"
 },
-{ 
+{
 "name":"Salary",
 "type":"Income",
 "category":"Salary"
 },
-{ 
+{
 "name":"Secondary Income",
 "type":"Income",
 "category":"Secondary income"
 },
-{ 
+{
 "name":"Secondary Income",
 "type":"Income",
 "category":"Others"
 },
-{ 
+{
 "name":"Secondary Income",
 "type":"Income",
 "category":"Business Income"
 },
-{ 
+{
 "name":"Shopping",
 "type":"Expense",
 "category":"Shopping"
 },
-{ 
+{
 "name":"Shopping",
 "type":"Expense",
 "category":"Clothing"
 },
-{ 
+{
 "name":"Shopping",
 "type":"Expense",
 "category":"Funiture & Housewares"
 },
-{ 
+{
 "name":"Shopping",
 "type":"Expense",
 "category":"Electronic Appliances"
 },
-{ 
+{
 "name":"Shopping",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Social Capital",
 "type":"Expense",
 "category":"Family Support"
 },
-{ 
+{
 "name":"Social Capital",
 "type":"Expense",
 "category":"Awards & Gifts"
 },
-{ 
+{
 "name":"Social Capital",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Social Capital",
 "type":"Expense",
 "category":"Donations"
 },
-{ 
+{
 "name":"Social Capital",
 "type":"Expense",
 "category":"Charity "
 },
-{ 
+{
 "name":"Transaction Fees",
 "type":"Expense",
 "category":"M-Pesa Fees"
 },
-{ 
+{
 "name":"Transaction Fees",
 "type":"Expense",
 "category":"Bank Fees"
 },
-{ 
+{
 "name":"Transaction Fees",
 "type":"Expense",
 "category":"Forex Fees"
 },
-{ 
+{
 "name":"Transaction Fees",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Transfer",
 "type":"Transfer",
 "category":"Transfer"
 },
-{ 
+{
 "name":"Travel & Lifestyle",
 "type":"Expense",
 "category":"Others"
 },
-{ 
+{
 "name":"Travel & Lifestyle",
 "type":"Expense",
 "category":"Holiday Vacation & Travel"
 },
-{ 
+{
 "name":"Travel & Lifestyle",
 "type":"Expense",
 "category":"Entertainment & Recreation"
