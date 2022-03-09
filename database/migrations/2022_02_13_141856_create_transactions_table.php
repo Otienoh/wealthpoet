@@ -30,6 +30,7 @@ return new class extends Migration {
             $table->boolean('hidden')->default(false);
             $table->json('extra_data')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
