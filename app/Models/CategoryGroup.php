@@ -24,7 +24,7 @@ class CategoryGroup extends Model
     /**
      * The model retrieved is of Income type
      *
-     * @return boolean
+     * @return bool
      */
     public function isIncome(): bool
     {
@@ -34,7 +34,7 @@ class CategoryGroup extends Model
     /**
      * The model retrieved is of Expense type
      *
-     * @return boolean
+     * @return bool
      */
     public function isExpense(): bool
     {
@@ -44,7 +44,7 @@ class CategoryGroup extends Model
     /**
      * The model retrieved is of Expense type
      *
-     * @return boolean
+     * @return bool
      */
     public function isTransfer(): bool
     {

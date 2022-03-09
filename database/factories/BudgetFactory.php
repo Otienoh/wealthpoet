@@ -20,7 +20,7 @@ class BudgetFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $this->faker->word() . ' Budget',
+            'name' => $this->faker->word().' Budget',
             'type' => $this->faker->randomElement([Budget::TYPE_MONTHLY, Budget::TYPE_CUSTOM]),
             'total_income' => $this->faker->biasedNumberBetween(100, 500),
             'income_spending_goal' => $this->faker->biasedNumberBetween(100, 500),

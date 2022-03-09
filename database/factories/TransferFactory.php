@@ -24,7 +24,7 @@ class TransferFactory extends Factory
             'account_id' => Account::factory(),
             'destination_account_id' => Account::factory(),
             'category_id' => Category::factory(),
-            'description' => $this->faker->word() . ' Transfer',
+            'description' => $this->faker->word().' Transfer',
             'amount' => $this->faker->biasedNumberBetween(100, 500),
             'date' => $this->faker->dateTimeThisYear(),
         ];

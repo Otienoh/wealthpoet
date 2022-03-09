@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
     {
         return [
             'category_group_id' => CategoryGroup::factory(),
-            'name' => $this->faker->word() . ' Category',
+            'name' => $this->faker->word().' Category',
         ];
     }
 }

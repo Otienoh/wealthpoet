@@ -23,7 +23,7 @@ class IncomeFactory extends Factory
             'user_id' => User::factory(),
             'account_id' => Account::factory(),
             'category_id' => Category::factory(),
-            'description' => $this->faker->word() . ' Income',
+            'description' => $this->faker->word().' Income',
             'amount' => $this->faker->biasedNumberBetween(100, 500),
             'date' => $this->faker->dateTimeThisYear(),
         ];

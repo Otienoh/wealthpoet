@@ -20,7 +20,7 @@ class CategoryGroupFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $this->faker->word() . ' Category Group',
+            'name' => $this->faker->word().' Category Group',
             'type' => $this->faker->randomElement([CategoryGroup::TYPE_INCOME, CategoryGroup::TYPE_EXPENSE]),
             'is_hidden' => $this->faker->boolean(),
         ];

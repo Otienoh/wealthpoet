@@ -9,7 +9,6 @@ it('can create a category group', function () {
     assertDatabaseCount('category_groups', 1);
 });
 
-
 it('can create an Income category group', function () {
     $categoryGroup = CategoryGroup::factory()->income()->create();
 
@@ -27,7 +26,6 @@ it('can create a Transfer category group', function () {
 
     expect($categoryGroup->type)->toEqual(CategoryGroup::TYPE_TRANSFER);
 });
-
 
 it('correctly identifies the retrieved model type', function () {
     $incomeCategoryGroup = CategoryGroup::factory()->income()->create();
@@ -48,4 +46,3 @@ it('correctly the retrieves model type based on scope', function () {
     expect(CategoryGroup::ofType(CategoryGroup::TYPE_EXPENSE)->count())->toEqual(1);
     expect(CategoryGroup::ofType(CategoryGroup::TYPE_TRANSFER)->count())->toEqual(1);
 });
-

@@ -35,7 +35,7 @@ class Budget extends Model
     /**
      * The model retrieved is a Monthly Budget
      *
-     * @return boolean
+     * @return bool
      */
     public function isAMonthlyBudget(): bool
     {
@@ -45,7 +45,7 @@ class Budget extends Model
     /**
      * The model retrieved is a Custom Budget
      *
-     * @return boolean
+     * @return bool
      */
     public function isACustomBudget(): bool
     {
@@ -56,7 +56,6 @@ class Budget extends Model
      * Retrieves only Custom Budgets
      *
      * @param Builder $builder
-     *
      */
     public function scopeCustomBudget(Builder $builder): void
     {
@@ -67,7 +66,6 @@ class Budget extends Model
      * Retrieves only Monthly Budgets
      *
      * @param Builder $builder
-     *
      */
     public function scopeMonthlyBudget(Builder $builder): void
     {
@@ -89,9 +87,9 @@ class Budget extends Model
         $balance = $this->income_spending_goal - $this->totalSpending();
 
         return match (true) {
-            $balance > 0 => Budget::STATUS_UNDERSPEND,
-            $balance == 0 => Budget::STATUS_BALANCED,
-            $balance < 0 => Budget::STATUS_OVERSPEND,
+            $balance > 0 => self::STATUS_UNDERSPEND,
+            $balance == 0 => self::STATUS_BALANCED,
+            $balance < 0 => self::STATUS_OVERSPEND,
         };
     }
 

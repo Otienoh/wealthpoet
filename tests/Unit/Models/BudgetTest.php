@@ -38,7 +38,6 @@ it('correctly the retrieves model type based on scope', function () {
 });
 
 it('can correctly calculate the totalSpending', function () {
-
     $budgetWithUnderSpendBudgetItems = Budget::factory()
                                         ->has(\App\Models\BudgetItem::factory()
                                             ->underspend()

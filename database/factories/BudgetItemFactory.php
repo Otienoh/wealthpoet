@@ -19,7 +19,7 @@ class BudgetItemFactory extends Factory
     {
         return [
             'budget_id' => Budget::factory(),
-            'name' => $this->faker->word() . ' Budget Item',
+            'name' => $this->faker->word().' Budget Item',
             'goal_amount' => $this->faker->biasedNumberBetween(100, 500),
             'spent_amount' => $this->faker->biasedNumberBetween(100, 500),
         ];

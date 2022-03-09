@@ -23,7 +23,7 @@ class AccountFactory extends Factory
             'user_id' => User::factory(),
             'institution_id' => Institution::factory(),
             'account_type_id' => AccountType::factory(),
-            'name' => $this->faker->name() . ' Account',
+            'name' => $this->faker->name().' Account',
             'initial_balance' => $this->faker->biasedNumberBetween(0, 1000),
             'main' => $this->faker->boolean(30),
         ];

@@ -40,9 +40,9 @@ class BudgetItem extends Model
         $balance = $this->balance();
 
         return match (true) {
-            $balance > 0 => BudgetItem::STATUS_UNDERSPEND,
-            $balance == 0 => BudgetItem::STATUS_BALANCED,
-            $balance < 0 => BudgetItem::STATUS_OVERSPEND,
+            $balance > 0 => self::STATUS_UNDERSPEND,
+            $balance == 0 => self::STATUS_BALANCED,
+            $balance < 0 => self::STATUS_OVERSPEND,
         };
     }
 

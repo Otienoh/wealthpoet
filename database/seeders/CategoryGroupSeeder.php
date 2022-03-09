@@ -17,7 +17,7 @@ class CategoryGroupSeeder extends Seeder
      */
     public function run()
     {
-        $json = File::get("database/data/categories.json");
+        $json = File::get('database/data/categories.json');
 
         collect(json_decode($json, true))->each(function ($categoriesGroup) {
             $type = match ($categoriesGroup['type']) {

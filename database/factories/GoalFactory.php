@@ -19,7 +19,7 @@ class GoalFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $this->faker->word() . ' Goal',
+            'name' => $this->faker->word().' Goal',
             'target_value' => $this->faker->biasedNumberBetween(500, 5000),
             'target_date' => $this->faker->dateTimeThisYear(),
         ];

@@ -10,7 +10,7 @@ class Institution extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'email', 'phone', 'address', 'country',];
+    protected $fillable = ['name', 'description', 'email', 'phone', 'address', 'country'];
 
     /**
      * @return HasMany

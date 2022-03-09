@@ -35,17 +35,17 @@ class Transaction extends Model
         'extra_data' => 'array',
     ];
 
-        /**
-         * The "booted" method of the model.
-         *
-         * @return void
-         */
-        protected static function booted()
-        {
-            static::created(function ($model) {
-                Account::settleAccount($model);
-            });
-        }
+    /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function ($model) {
+            Account::settleAccount($model);
+        });
+    }
 
     public static function logIncome(Income $income): self
     {
@@ -78,7 +78,6 @@ class Transaction extends Model
             'transactionable_type' => Expense::class,
         ]);
     }
-
 
     public static function logTransfer(Transfer $transfer): self
     {

@@ -52,7 +52,6 @@ class Account extends Model
         $transaction->account()->increment('balance', (int) $transaction->credit);
         $transaction->account()->decrement('balance', (int) $transaction->debit);
 
-        return;
     }
 
     /**

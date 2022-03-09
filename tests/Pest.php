@@ -11,6 +11,7 @@
 |
 */
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
 uses(Tests\TestCase::class, RefreshDatabase::class)->in('Feature', 'Unit');
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,7 @@ uses(Tests\TestCase::class, RefreshDatabase::class)->in('Feature', 'Unit');
 | to assert different things. Of course, you may extend the Expectation API at any time.
 |
 */
-expect()->extend('toBeOne', fn() => $this->toBe(1));
+expect()->extend('toBeOne', fn () => $this->toBe(1));
 /*
 |--------------------------------------------------------------------------
 | Functions
