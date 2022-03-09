@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin User',
             'email' => 'admin@dev.com',
         ]);
-        $this->call(CategoryGroupSeeder::class);
+        $this->call(CategorySeeder::class);
         $this->call(AccountTypeSeeder::class);
         \App\Models\User::factory(2)->create();
         \App\Models\BudgetItem::factory(2)->create();
