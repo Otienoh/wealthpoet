@@ -22,11 +22,6 @@
 {
 "name":"Auto & Transport",
 "type":"Expense",
-"category":"Others"
-},
-{
-"name":"Auto & Transport",
-"type":"Expense",
 "category":"Transport"
 },
 {
@@ -36,8 +31,7 @@
 },
 {
 "name":"Awards & Gifts",
-"type":"Income",
-"category":"Awards & Gifts"
+"type":"Income"
 },
 {
 "name":"Bills & Utilities",
@@ -53,11 +47,6 @@
 "name":"Bills & Utilities",
 "type":"Expense",
 "category":"Water"
-},
-{
-"name":"Bills & Utilities",
-"type":"Expense",   
-"category":"Others"
 },
 {
 "name":"Bills & Utilities",
@@ -80,14 +69,8 @@
 "category":"Garbage"
 },
 {
-"name":"Business",
-"type":"Expense",
-"category":"Business Expense"
-},
-{
-"name":"Education",
-"type":"Expense",
-"category":"Others"
+"name":"Business Expense",
+"type":"Expense"
 },
 {
 "name":"Education",
@@ -135,11 +118,6 @@
 "category":"Credit Card Payments"
 },
 {
-"name":"Financial",
-"type":"Expense",
-"category":"Others"
-},
-{
 "name":"Food & Dining",
 "type":"Expense",
 "category":"Home"
@@ -148,11 +126,6 @@
 "name":"Food & Dining",
 "type":"Expense",
 "category":"Eat Outs"
-},
-{
-"name":"Health & Wellness",
-"type":"Expense",
-"category":"Others"
 },
 {
 "name":"Health & Wellness",
@@ -186,8 +159,7 @@
 },
 {
 "name":"High Risk",
-"type":"Expense",
-"category":"High Risk"
+"type":"Expense"
 },
 {
 "name":"Housing",
@@ -207,22 +179,11 @@
 {
 "name":"Housing",
 "type":"Expense",
-"category":"Others"
-},
-{
-"name":"Housing",
-"type":"Expense",
 "category":"House Management"
 },
 {
 "name":"Insurance Policies",
-"type":"Expense",
-"category":"Insurance Policies"
-},
-{
-"name":"Investments",
-"type":"Income",
-"category":"Others"
+"type":"Expense"
 },
 {
 "name":"Investments",
@@ -265,39 +226,24 @@
 "category":"Capital Gains"
 },
 {
-"name":"Other",
-"type":"Expense",
-"category":"Misc"
+"name":"Other Misc",
+"type":"Expense"
 },
 {
 "name":"Refunds",
-"type":"Income",
-"category":"Refunds"
+"type":"Income"
 },
 {
 "name":"Salary",
-"type":"Income",
-"category":"Salary"
+"type":"Income"
 },
 {
 "name":"Secondary Income",
-"type":"Income",
-"category":"Secondary income"
+"type":"Income"
 },
 {
-"name":"Secondary Income",
-"type":"Income",
-"category":"Others"
-},
-{
-"name":"Secondary Income",
-"type":"Income",
-"category":"Business Income"
-},
-{
-"name":"Shopping",
-"type":"Expense",
-"category":"Shopping"
+"name":"Business Income",
+"type":"Income"
 },
 {
 "name":"Shopping",
@@ -316,8 +262,7 @@
 },
 {
 "name":"Shopping",
-"type":"Expense",
-"category":"Others"
+"type":"Expense"
 },
 {
 "name":"Social Capital",
@@ -331,8 +276,7 @@
 },
 {
 "name":"Social Capital",
-"type":"Expense",
-"category":"Others"
+"type":"Expense"
 },
 {
 "name":"Social Capital",
@@ -361,18 +305,15 @@
 },
 {
 "name":"Transaction Fees",
-"type":"Expense",
-"category":"Others"
+"type":"Expense"
 },
 {
 "name":"Transfer",
-"type":"Transfer",
-"category":"Transfer"
+"type":"Transfer"
 },
 {
 "name":"Travel & Lifestyle",
-"type":"Expense",
-"category":"Others"
+"type":"Expense"
 },
 {
 "name":"Travel & Lifestyle",

@@ -14,10 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@dev.com',
-        ]);
         $this->call(CategorySeeder::class);
         $this->call(AccountTypeSeeder::class);
         \App\Models\User::factory(2)->create();
