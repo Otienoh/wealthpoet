@@ -63,7 +63,7 @@ class GoalDeposit extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('Goal')->rules('required')->searchable(),
+            BelongsTo::make('Goal')->rules('required'),
             DateTime::make(__('Deposited At'), 'deposited_at')->rules('required'),
             Text::make(__('Amount'), 'amount')->rules('required'),
         ];

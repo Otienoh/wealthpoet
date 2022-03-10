@@ -63,7 +63,7 @@ class BudgetItem extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('Budget')->rules('required')->searchable(),
+            BelongsTo::make('Budget')->rules('required'),
             Text::make(__('Name'), 'name')->rules('required'),
             Text::make(__('Goal Amount'), 'goal_amount')->rules('required'),
             Text::make(__('Spent Amount'), 'spent_amount')->rules('required'),

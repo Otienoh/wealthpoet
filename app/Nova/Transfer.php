@@ -3,11 +3,14 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\Textarea;
 
 class Transfer extends Resource
 {
@@ -64,14 +67,16 @@ class Transfer extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('User')->rules('required')->searchable(),
-            BelongsTo::make('Category')->rules('required')->searchable(),
-            BelongsTo::make('Account')->rules('required')->searchable(),
-            BelongsTo::make('Account')->rules('required')->searchable(),
-            Text::make(__('Description'), 'description')->rules('required'),
-            Text::make(__('Amount'), 'amount')->rules('required'),
+            Hidden::make('Owned By', 'user_id')->default(function ($request) {
+                return $request->user()->getKey();
+            }),
+            BelongsTo::make('Category')->rules('required'),
+            BelongsTo::make('Transfer From', 'Account', Account::class)->rules('required'),
+            BelongsTo::make('Transfer To', 'destinationAccount', Account::class)->rules('required'),
+            Textarea::make(__('Description'), 'description')->rules('required')->stacked(),
+            Number::make(__('Amount'), 'amount')->rules('required'),
             Date::make(__('Date'), 'date')->rules('required'),
-            Text::make(__('Notes'), 'notes'),
+            Textarea::make(__('Notes'), 'notes'),
             Text::make(__('Recurs'), 'recurs'),
             DateTime::make(__('Next Recurrence Date'), 'next_recurrence_date'),
             Text::make(__('Location'), 'location'),

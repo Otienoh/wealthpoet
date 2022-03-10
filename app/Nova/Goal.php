@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
@@ -63,7 +64,9 @@ class Goal extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('User')->rules('required')->searchable(),
+            Hidden::make('Owned By', 'user_id')->default(function ($request) {
+                return $request->user()->getKey();
+            }),
             Text::make(__('Name'), 'name')->rules('required'),
             Text::make(__('Description'), 'description'),
             Text::make(__('Color'), 'color'),

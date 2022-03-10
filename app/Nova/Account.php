@@ -3,6 +3,8 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
@@ -65,17 +67,20 @@ class Account extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('User')->rules('required'),
-            BelongsTo::make('Institution')->nullable(),
+            Hidden::make('Owned By', 'user_id')->default(function ($request) {
+                return $request->user()->getKey();
+            }),
+            BelongsTo::make('Institution')->nullable()->showCreateRelationButton(),
             BelongsTo::make('AccountType')->rules('required'),
             Text::make(__('Name'), 'name')->rules('required'),
-            Textarea::make(__('Description'), 'description'),
+            Textarea::make(__('Description'), 'description')->rows(3),
             Text::make(__('Color'), 'color'),
             Text::make(__('Initial Balance'), 'initial_balance')->rules('required'),
             Text::make(__('Balance'), 'balance')->rules('required'),
             Boolean::make(__('Main'), 'main')->rules('required'),
             Boolean::make(__('Include In Net Worth'), 'include_in_net_worth')->rules('required'),
             Boolean::make(__('Include In Dashboard Sum'), 'include_in_dashboard_sum')->rules('required'),
+            HasMany::make('Transactions')
         ];
     }
 
