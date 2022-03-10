@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
@@ -64,7 +65,9 @@ class Category extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('User')->searchable(),
+            Hidden::make('Owned By', 'user_id')->default(function ($request) {
+                return $request->user()->getKey();
+            }),
             Text::make(__('Parent Id'), 'parent_id'),
             Text::make(__('Name'), 'name')->rules('required'),
             Text::make(__('Color'), 'color'),

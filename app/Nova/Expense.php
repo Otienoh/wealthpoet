@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
@@ -65,9 +66,11 @@ class Expense extends Resource
     {
         return [
             ID::make(__('Id'), 'id')->rules('required'),
-            BelongsTo::make('User')->rules('required')->searchable(),
-            BelongsTo::make('Account')->rules('required')->searchable(),
-            BelongsTo::make('Category')->rules('required')->searchable(),
+            Hidden::make('Owned By', 'user_id')->default(function ($request) {
+                return $request->user()->getKey();
+            }),
+            BelongsTo::make('Account')->rules('required'),
+            BelongsTo::make('Category')->rules('required'),
             Text::make(__('Description'), 'description')->rules('required'),
             Text::make(__('Amount'), 'amount')->rules('required'),
             Date::make(__('Date'), 'date')->rules('required'),
