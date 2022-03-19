@@ -43,7 +43,11 @@ jobs:
       - name: Install composer dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-        run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+          NOVA_PASSWORD: ${{ secrets.NOVA_PASSWORD }}
+          NOVA_USERNAME: ${{ secrets.NOVA_USERNAME }}
+        run: |
+          composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
+          composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Generate application key
         run: php artisan key:generate
       - name: Run tests
