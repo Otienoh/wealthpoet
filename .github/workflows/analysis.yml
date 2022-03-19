@@ -22,6 +22,8 @@ jobs:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
+      - name: Setup CI Authentication
+        run: composer config http-basic.nova.laravel.com ${{ secrets.NOVA_USERNAME }} ${{ secrets.NOVA_PASSWORD }}
       - name: Install composer dependencies
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
