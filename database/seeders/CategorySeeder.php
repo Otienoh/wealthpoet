@@ -22,6 +22,11 @@ class CategorySeeder extends Seeder
             'email' => 'admin@dev.com',
         ]);
 
+        $this->populateData($user);
+    }
+
+    public function populateData($user)
+    {
         $json = File::get(database_path('data/categories.json'));
 
         collect(json_decode($json, true))->each(function ($category) use ($user) {

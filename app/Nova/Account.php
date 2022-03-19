@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Hidden;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
@@ -75,11 +76,12 @@ class Account extends Resource
             Text::make(__('Name'), 'name')->rules('required'),
             Textarea::make(__('Description'), 'description')->rows(3),
             Text::make(__('Color'), 'color'),
-            Text::make(__('Initial Balance'), 'initial_balance')->rules('required'),
-            Text::make(__('Balance'), 'balance')->rules('required'),
-            Boolean::make(__('Main'), 'main')->rules('required'),
-            Boolean::make(__('Include In Net Worth'), 'include_in_net_worth')->rules('required'),
-            Boolean::make(__('Include In Dashboard Sum'), 'include_in_dashboard_sum')->rules('required'),
+            Number::make(__('Initial Balance'), 'initial_balance')->rules('required')
+                ->default(0),
+            Text::make(__('Balance'), 'balance')->rules('required')->hideWhenCreating(),
+            Boolean::make(__('Main'), 'main'),
+            Boolean::make(__('Include In Net Worth'), 'include_in_net_worth'),
+            Boolean::make(__('Include In Dashboard Sum'), 'include_in_dashboard_sum'),
             HasMany::make('Transactions')
         ];
     }

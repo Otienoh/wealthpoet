@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Traits\OwnedByUser;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -41,9 +42,12 @@ class Transfer extends Model
      */
     protected static function booted()
     {
-        static::created(function ($model) {
-            Transaction::logTransfer($model);
+        static::creating(function ($model) {
+            $model->category_id = 1;
+            $model->description ??= "Transfer {$model->amount} from {$model->account->name} to {$model->destinationAccount->name}";
         });
+
+        static::created(fn ($model) => Transaction::logTransfer($model));
     }
 
     /**

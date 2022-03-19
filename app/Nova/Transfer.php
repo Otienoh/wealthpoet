@@ -70,15 +70,14 @@ class Transfer extends Resource
             Hidden::make('Owned By', 'user_id')->default(function ($request) {
                 return $request->user()->getKey();
             }),
-            BelongsTo::make('Category')->rules('required'),
+            BelongsTo::make('Category')->rules('required')->hideWhenCreating(),
             BelongsTo::make('Transfer From', 'Account', Account::class)->rules('required'),
             BelongsTo::make('Transfer To', 'destinationAccount', Account::class)->rules('required'),
-            Textarea::make(__('Description'), 'description')->rules('required')->stacked(),
             Number::make(__('Amount'), 'amount')->rules('required'),
             Date::make(__('Date'), 'date')->rules('required'),
             Textarea::make(__('Notes'), 'notes'),
             Text::make(__('Recurs'), 'recurs'),
-            DateTime::make(__('Next Recurrence Date'), 'next_recurrence_date'),
+            DateTime::make(__('Next Recurrence Date'), 'next_recurrence_date')->hideWhenCreating(),
             Text::make(__('Location'), 'location'),
             Text::make(__('Extra Data'), 'extra_data'),
         ];

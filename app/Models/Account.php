@@ -43,7 +43,7 @@ class Account extends Model
     protected static function booted()
     {
         static::creating(function ($model) {
-            $model->balance = $model->initial_balance;
+            $model->balance += $model->initial_balance;
         });
     }
 
