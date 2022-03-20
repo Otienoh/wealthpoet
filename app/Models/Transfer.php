@@ -43,11 +43,13 @@ class Transfer extends Model
     protected static function booted()
     {
         static::creating(function ($model) {
-            $model->category_id = 1;
+            $model->category_id = Category::first()->id;
             $model->description ??= "Transfer {$model->amount} from {$model->account->name} to {$model->destinationAccount->name}";
         });
 
-        static::created(fn ($model) => Transaction::logTransfer($model));
+        static::created(function ($model) {
+            Transaction::logTransfer($model);
+        });
     }
 
     /**

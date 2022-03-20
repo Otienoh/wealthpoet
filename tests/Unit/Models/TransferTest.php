@@ -1,11 +1,15 @@
 <?php
 
 use App\Models\Account;
-use App\Models\Income;
 use App\Models\Transaction;
 use App\Models\Transfer;
+use App\Models\User;
 use Database\Seeders\CategorySeeder;
 use function Pest\Laravel\assertDatabaseCount;
+
+beforeEach(function () {
+    app(CategorySeeder::class)->populateData(User::factory()->create());
+});
 
 it('can create a transfer', function () {
     Transfer::factory()->create();
@@ -47,17 +51,12 @@ it('correctly updates and settles the accounts balance', function () {
 });
 
 it('assigns all new transfers a category named transfer', function () {
-
-    app(CategorySeeder::class)->populateData(\App\Models\User::factory()->create());
-
     $transfer = Transfer::factory()->create();
 
     expect($transfer->category->name)->toEqual('Transfer');
 });
 
 it('correctly sets the transfer description in a human readable manner', function () {
-
-//
     $sourceAccount = Account::factory()->create([
         'name' => 'Source Account',
     ]);
