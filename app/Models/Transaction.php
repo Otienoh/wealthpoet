@@ -84,7 +84,7 @@ class Transaction extends Model
     public static function logTransfer(Transfer $transfer): self
     {
         self::create([
-            'user_id' => $transfer->id,
+            'user_id' => $transfer->user_id,
             'account_id' => $transfer->account_id,
             'category_id' => $transfer->category_id,
             'amount' => $transfer->amount,
