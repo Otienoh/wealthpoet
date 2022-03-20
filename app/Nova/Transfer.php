@@ -73,6 +73,7 @@ class Transfer extends Resource
             BelongsTo::make('Category')->rules('required')->hideWhenCreating(),
             BelongsTo::make('Transfer From', 'Account', Account::class)->rules('required'),
             BelongsTo::make('Transfer To', 'destinationAccount', Account::class)->rules('required'),
+            Textarea::make(__('Description'), 'description')->hideWhenCreating()->showOnIndex()->alwaysShow(),
             Number::make(__('Amount'), 'amount')->rules('required'),
             Date::make(__('Date'), 'date')->rules('required'),
             Textarea::make(__('Notes'), 'notes'),
