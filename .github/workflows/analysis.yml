@@ -31,4 +31,6 @@ jobs:
           composer config http-basic.nova.laravel.com ${NOVA_USERNAME} ${NOVA_PASSWORD}
           composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Run Psalm
-        run: psalm
+        run: |
+          psalm --init
+          psalm
