@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\File;
 use Staudenmeir\LaravelAdjacencyList\Eloquent\HasRecursiveRelationships;
 
 class Category extends Model
@@ -105,5 +106,36 @@ class Category extends Model
     public function transfers(): HasMany
     {
         return $this->hasMany(Transfer::class);
+    }
+
+    public static function populateData(User $user)
+    {
+        $json = File::get(database_path('data/categories.json'));
+
+        collect(json_decode($json, true))->each(function ($category) use ($user) {
+
+            $type = match ($category['type']) {
+                'Income' => Category::TYPE_INCOME,
+                'Expense' => Category::TYPE_EXPENSE,
+                'Transfer' => Category::TYPE_TRANSFER,
+            };
+
+            $parent = Category::firstOrCreate([
+                'user_id' => $user->id,
+                'name' => $category['name'],
+                'type' => $type,
+                'is_hidden' => $category['type'] == 'Transfer',
+            ]);
+
+            if (isset($category['category'])) {
+                Category::firstOrCreate([
+                    'user_id' => $user->id,
+                    'parent_id' => $parent->id,
+                    'name' =>  $category['category'],
+                    'type' => $type,
+                    'is_hidden' => $category['type'] == 'Transfer',
+                ]);
+            }
+        });
     }
 }

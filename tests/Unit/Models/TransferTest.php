@@ -7,9 +7,6 @@ use App\Models\User;
 use Database\Seeders\CategorySeeder;
 use function Pest\Laravel\assertDatabaseCount;
 
-beforeEach(function () {
-    app(CategorySeeder::class)->populateData(User::factory()->create());
-});
 
 it('can create a transfer', function () {
     Transfer::factory()->create();
@@ -35,7 +32,7 @@ it('correctly updates and settles the accounts balance', function () {
         'amount' => 3000,
     ]);
 
-    $transaction = Transaction::get()->toArray();
+    $transaction = Transaction::all();
     $sourceAccount = Account::find($sourceAccount->id);
     $destinationAccount = Account::find($destinationAccount->id);
 

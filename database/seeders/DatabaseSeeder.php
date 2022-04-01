@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,13 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CategorySeeder::class);
+        User::factory()->create([
+            'name' => 'Admin User',
+            'email' => 'admin@dev.com',
+        ]);
         $this->call(AccountTypeSeeder::class);
-        \App\Models\User::factory(2)->create();
-//        \App\Models\BudgetItem::factory(2)->create();
-//        \App\Models\GoalDeposit::factory(2)->create();
-//        \App\Models\Income::factory(2)->create();
-//        \App\Models\Expense::factory(2)->create();
-//        \App\Models\Transfer::factory(2)->create();
+        User::factory(2)->create();
     }
 }

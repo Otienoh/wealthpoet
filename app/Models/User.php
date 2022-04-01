@@ -44,6 +44,18 @@ class User extends Authenticatable
     ];
 
     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function ($model) {
+            Category::populateData($model);
+        });
+    }
+
+    /**
      * @return HasMany
      */
     public function accounts(): HasMany
